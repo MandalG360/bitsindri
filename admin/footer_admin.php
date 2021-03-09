@@ -18,5 +18,13 @@
         <script src="../assets/js/dataTables.bootstrap4.min.js"></script>
         <script src="../assets/js/dataTables.js"></script>
         <script src="../assets/js/admin.js"></script>
+        <!-- remove dublicate value on dropdown list -->
+        <script type="text/javascript">
+            $(function(){
+                $('select option').each(function(){
+                    $(this).siblings("[value="+this.value+"]").remove();
+                });
+            })
+        </script>
     </body>
 </html>

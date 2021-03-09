@@ -22,6 +22,7 @@ while ($row = mysqli_fetch_array($query)) {
             return false;
         }
     }
+
 </script>
 
 <div id="layoutSidenav_content">
