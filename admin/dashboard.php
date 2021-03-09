@@ -69,8 +69,10 @@
                                                 <th>SN.</th>
                                                 <th>Notice</th>
                                                 <th>Status</th>
+                                                <?php if($_SESSION['session_desn_id']!=2) { ?>
                                                 <th>Update</th>
                                                 <th>Delete</th>
+                                                <?php } ?>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -100,8 +102,10 @@
                                                     <td><a class="btn btn-success btn-xs"> Running... </a></td>
                                                 <?php } ?>
 
+                                                <?php if($_SESSION['session_desn_id']!=2) { ?>
                                                 <td><a href="#" class="btn btn-primary btn-xs"> <i class="fa fa-edit"></i> </a></td>
                                                 <td><a onclick='return Confirm();' href="delete_notice.php?id=<?php echo $notice_id; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a></td>
+                                                <?php } ?>
                                             </tr>
                                             <?php } ?>
                                         </tbody>

@@ -1,1 +1,10 @@
+# security for directory
 Options -Indexes
+
+# handle page not found
+ErrorDocument 403 http://127.0.0.1/bitsindri
+ErrorDocument 404 http://127.0.0.1/bitsindri
+ErrorDocument 405 http://127.0.0.1/bitsindri
+
+RewriteEngine On
+RewriteRule /^([a-zA-Z0-9]+)$/ index.php?url=$1

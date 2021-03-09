@@ -98,20 +98,32 @@
               <h2>Faculties</h2>
             </div>
             <table class="dept-fact">
-              <tr>
-                <th>SN.</th>
-                <th>Name</th>
-                <th>Designation</th>
-                <th>Mobile</th>
-                <th>E-Mail</th>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Dr. Md F Ansari</td>
-                <td>Professor & HOD</td>
-                <td>+91-9934394179</td>
-                <td>hod.it@bitsindri.ac.in</td>
-              </tr>
+              <thead>
+                  <tr>
+                      <th>SN.</th>
+                      <th>Name</th>
+                      <th>Designation</th>
+                      <th>Department</th>
+                      <th>Mobile</th>
+                      <th>Email</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <?php 
+                      $i = 1;
+                      $query = mysqli_query($conn, "SELECT teacher_contact.name as 'name', teacher_contact.mob as 'mob', teacher_contact.email as 'email', designation.type as 'desn', department.name as 'dept' FROM teacher_contact LEFT JOIN (designation, department) ON (designation.desn_id=teacher_contact.desn_fk AND department.dept_id=teacher_contact.dept_fk) WHERE teacher_contact.dept_fk=3 ORDER BY teacher_contact.desn_fk DESC");
+                      while(@$row = mysqli_fetch_array($query)){
+                  ?>
+                  <tr>
+                      <td><?php echo $i; $i++; ?></td>
+                      <td><?php echo $row['name']; ?></td>
+                      <td><?php echo $row['desn']; ?></td>
+                      <td><?php echo $row['dept']; ?></td>
+                      <td><?php echo $row['mob']; ?></td>
+                      <td><?php echo $row['email']; ?></td>
+                  </tr>
+                  <?php } ?>
+              </tbody>
             </table>
         </div>
       </div>

@@ -22,14 +22,9 @@
         <?php }else{ echo ""; } ?>
 
         <div class="container-fluid">
-            <h1 class="mt-4">Achievement Images Published</h1>
-            <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item active">Achievement</li>
-            </ol>
-
             <div class="row">
                 <fieldset class="form-group border p-3 w-100">
-                    <legend class="w-auto px-2">Upload New Achievement</legend>
+                    <legend class="w-auto px-2"><b>Upload New Achievement</b></legend>
 
                     <form role="form" id="form" name="form" method="post" action="" enctype="multipart/form-data">
                         

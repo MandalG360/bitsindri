@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 01, 2021 at 02:06 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Generation Time: Mar 09, 2021 at 08:29 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -49,8 +48,7 @@ INSERT INTO `achievement` (`acmt_id`, `file`, `usr_id`) VALUES
 (9, '01032021171137.jpg', 1),
 (10, '01032021171143.jpg', 1),
 (11, '01032021171150.jpg', 1),
-(12, '01032021171156.jpg', 1),
-(13, '01032021171249.jpg', 1);
+(12, '01032021171156.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -98,27 +96,65 @@ CREATE TABLE `designation` (
 INSERT INTO `designation` (`desn_id`, `type`) VALUES
 (1, 'Operator'),
 (2, 'Student'),
-(3, 'Teacher'),
-(4, 'HOD');
+(3, 'Assistant Professor'),
+(4, 'Professor'),
+(5, 'Professor & HOD');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gallary`
+-- Table structure for table `gallery`
 --
 
-CREATE TABLE `gallary` (
+CREATE TABLE `gallery` (
   `glr_id` int(11) NOT NULL,
   `file` varchar(50) NOT NULL,
   `usr_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `gallary`
+-- Dumping data for table `gallery`
 --
 
-INSERT INTO `gallary` (`glr_id`, `file`, `usr_id`) VALUES
-(1, '01032021182637.jpg', 1);
+INSERT INTO `gallery` (`glr_id`, `file`, `usr_id`) VALUES
+(3, '02032021234903.jpg', 1),
+(4, '02032021234910.jpg', 1),
+(5, '02032021234915.jpg', 1),
+(6, '02032021234921.jpg', 1),
+(7, '02032021234927.jpg', 1),
+(8, '02032021234931.jpg', 1),
+(9, '02032021234937.jpg', 1),
+(10, '02032021234944.jpg', 1),
+(11, '02032021234949.jpg', 1),
+(12, '02032021234954.jpg', 1),
+(13, '02032021235014.jpg', 1),
+(14, '02032021235021.jpg', 1),
+(15, '02032021235029.jpg', 1),
+(16, '02032021235036.jpg', 1),
+(17, '02032021235043.jpg', 1),
+(18, '02032021235051.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `message`
+--
+
+CREATE TABLE `message` (
+  `msg_id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `subject` varchar(150) NOT NULL,
+  `msg` varchar(500) NOT NULL,
+  `created` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`msg_id`, `name`, `email`, `subject`, `msg`, `created`) VALUES
+(1, 'ashish', '666kmandal@gmail.com', 'test', 'msg here', '2021-03-09 15:36:55');
 
 -- --------------------------------------------------------
 
@@ -131,23 +167,23 @@ CREATE TABLE `notice` (
   `msg` varchar(500) NOT NULL,
   `link` varchar(300) DEFAULT NULL,
   `file` varchar(150) DEFAULT NULL,
-  `start_date_time` datetime NOT NULL,
-  `end_date_time` datetime NOT NULL,
+  `start_date_time` timestamp NULL DEFAULT NULL,
+  `end_date_time` timestamp NULL DEFAULT NULL,
   `usr_id` int(11) NOT NULL,
-  `updated` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `created` datetime NOT NULL DEFAULT current_timestamp()
+  `created` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `notice`
 --
 
-INSERT INTO `notice` (`notice_id`, `msg`, `link`, `file`, `start_date_time`, `end_date_time`, `usr_id`, `updated`, `created`) VALUES
-(10, 'Notice for Diploma to Degree (Lateral Entry) Admission in B.Tech 3rd sem session 2020-21 through JCECEB, Ranchi 2nd counselling posted on 5-1-2021Notice for Diploma to Degree (Lateral Entry) Admission in B.Tech 3rd sem session 2020-21 through JCECEB, Ranchi 2nd counselling.', 'https://bitsindri.ac.in/docs/Notice%20for%20Diploma%20to%20Degree%20(Lateral%20Enry)%20Admission%20in%20B.Tech%203rd%20sem%20session%202020-21%20through%20JCECEB,%20Ranchi%202nd%20counselling.pdf', NULL, '2021-02-01 00:00:00', '2021-02-10 19:57:00', 1, '2021-02-26 19:57:52', '2021-02-26 19:57:52'),
-(11, 'Notice for B.Tech 2nd sem form filling (JUT, Ranchi) session 2019-20- (posted on 8-1-2021)Notice for B.Tech 2nd sem form filling (JUT, Ranchi) session 2019-20.', 'https://bitsindri.ac.in/docs/Notice%20for%20B.Tech%202nd%20sem%20form%20filling%20(JUT,%20Ranchi)%20session%202019-20.pdf', NULL, '2021-02-02 00:00:00', '2021-03-07 19:59:00', 1, '2021-02-26 20:02:23', '2021-02-26 20:00:09'),
-(12, 'Notice for Tentative date of B.Tech 3rd Semester Examination 2020', 'https://bitsindri.ac.in/docs/Notice%20for%20tentative%C2%A0date%20of%20B.Tech%203rd%20Semester%20Examination%202020.pdf', NULL, '2021-02-26 00:00:00', '2021-03-14 20:01:00', 1, '2021-02-26 20:01:29', '2021-02-26 20:01:29'),
-(13, 'Consent for students of B TECH  3 rd and 4th year and M TECH 1st and 2nd year for residing in Hostel  (Posted on 25-2-2021)Consent for students of B TECH 3 rd and 4th year and M TECH 1st and 2nd year for residing in Hostel.', 'https://bitsindri.ac.in/docs/Consent%20for%20Hostels.pdf', NULL, '2021-02-25 00:00:00', '2021-03-14 20:03:00', 1, '2021-02-26 20:03:47', '2021-02-26 20:03:47'),
-(14, 'Notice for GATE Scholarship of M.Tech 1st sem 2020-21 students  (Posted on 26-2-2021)Notice for GATE Scholarship of M.Tech 1st sem 2020-21 students.', 'https://bitsindri.ac.in/docs/gatescholarshipnotice-26-2-2021.PDF', NULL, '2021-03-01 00:00:00', '2021-03-14 20:05:00', 1, '2021-02-26 20:05:31', '2021-02-26 20:05:31');
+INSERT INTO `notice` (`notice_id`, `msg`, `link`, `file`, `start_date_time`, `end_date_time`, `usr_id`, `created`, `updated`) VALUES
+(10, 'Notice for Diploma to Degree (Lateral Entry) Admission in B.Tech 3rd sem session 2020-21 through JCECEB, Ranchi 2nd counselling posted on 5-1-2021Notice for Diploma to Degree (Lateral Entry) Admission in B.Tech 3rd sem session 2020-21 through JCECEB, Ranchi 2nd counselling.', 'https://bitsindri.ac.in/docs/Notice%20for%20Diploma%20to%20Degree%20(Lateral%20Enry)%20Admission%20in%20B.Tech%203rd%20sem%20session%202020-21%20through%20JCECEB,%20Ranchi%202nd%20counselling.pdf', NULL, '2021-01-31 18:30:00', '2021-02-10 14:27:00', 1, '2021-02-26 14:27:52', '2021-02-26 14:27:52'),
+(11, 'Notice for B.Tech 2nd sem form filling (JUT, Ranchi) session 2019-20- (posted on 8-1-2021)Notice for B.Tech 2nd sem form filling (JUT, Ranchi) session 2019-20.', 'https://bitsindri.ac.in/docs/Notice%20for%20B.Tech%202nd%20sem%20form%20filling%20(JUT,%20Ranchi)%20session%202019-20.pdf', NULL, '2021-02-01 18:30:00', '2021-03-07 14:29:00', 1, '2021-02-26 14:32:23', '2021-02-26 14:30:09'),
+(12, 'Notice for Tentative date of B.Tech 3rd Semester Examination 2020', 'https://bitsindri.ac.in/docs/Notice%20for%20tentative%C2%A0date%20of%20B.Tech%203rd%20Semester%20Examination%202020.pdf', NULL, '2021-02-25 18:30:00', '2021-03-14 14:31:00', 1, '2021-02-26 14:31:29', '2021-02-26 14:31:29'),
+(13, 'Consent for students of B TECH  3 rd and 4th year and M TECH 1st and 2nd year for residing in Hostel  (Posted on 25-2-2021)Consent for students of B TECH 3 rd and 4th year and M TECH 1st and 2nd year for residing in Hostel.', 'https://bitsindri.ac.in/docs/Consent%20for%20Hostels.pdf', NULL, '2021-02-24 18:30:00', '2021-03-14 14:33:00', 1, '2021-02-26 14:33:47', '2021-02-26 14:33:47'),
+(14, 'Notice for GATE Scholarship of M.Tech 1st sem 2020-21 students  (Posted on 26-2-2021)Notice for GATE Scholarship of M.Tech 1st sem 2020-21 students.', 'https://bitsindri.ac.in/docs/gatescholarshipnotice-26-2-2021.PDF', NULL, '2021-02-28 18:30:00', '2021-03-14 14:35:00', 1, '2021-02-26 14:35:31', '2021-02-26 14:35:31');
 
 -- --------------------------------------------------------
 
@@ -169,8 +205,38 @@ CREATE TABLE `slider` (
 
 INSERT INTO `slider` (`sdr_id`, `file`, `heading`, `description`, `usr_id`) VALUES
 (1, '01032021175126.jpg', 'Welcome to BIT Sindri', 'The main aim of the institute is to cater to the needs of the nation for technological manpower development and research programs comparable to the best of the world. The college today offers B.Tech courses in 10 disciplines of engineering namely Mechanical, Electrical, Metallurgy, Production, Chemical, Electronics & Communications, Civil, Mining, Computer Science, Information technology, having NBA accreditation.', 1),
-(2, '01032021181736.jpg', '', '', 1),
-(3, '01032021181931.jpg', 'Front park', '', 1);
+(2, '01032021181736.jpg', '', '', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teacher_contact`
+--
+
+CREATE TABLE `teacher_contact` (
+  `tchr_id` int(11) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `mob` varchar(10) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `desn_fk` int(3) NOT NULL,
+  `dept_fk` int(3) NOT NULL,
+  `usr_fk` int(6) NOT NULL,
+  `created` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `teacher_contact`
+--
+
+INSERT INTO `teacher_contact` (`tchr_id`, `name`, `mob`, `email`, `desn_fk`, `dept_fk`, `usr_fk`, `created`, `updated`) VALUES
+(1, 'Dr. Md F Ansari', '9934394179', 'hod.it@bitsindri.ac.in', 5, 6, 1, '2021-03-09 17:08:03', '2021-03-09 17:08:03'),
+(2, 'Dr. D K Singh', '9431445854', 'director@bitsindri.ac.in', 4, 6, 1, '2021-03-09 18:25:01', '2021-03-09 18:25:01'),
+(3, ' Dr. S C Dutta ', '9431379679', 'scdutta@bitsindri.ac.in', 3, 6, 1, '2021-03-09 18:31:15', '2021-03-09 18:31:15'),
+(4, 'Prof. Parbati Mahanto', '9470978517', 'pmahanto.it@bitsindri.ac.in', 3, 6, 1, '2021-03-09 18:32:00', '2021-03-09 18:32:00'),
+(5, 'Prof. Rajiv Ranjan', '9507420028', 'rajivranjan.it@bitsindri.ac.in', 3, 6, 1, '2021-03-09 18:32:53', '2021-03-09 18:32:53'),
+(6, 'Dr. Amit Kumar Gupta', '9835785852', 'hod.che@bitsindri.ac.in', 5, 1, 1, '2021-03-09 18:34:13', '2021-03-09 18:34:13'),
+(7, 'Dr. Amar Kumar', '9334281501', 'akumar.che@bitsindri.ac.in', 3, 1, 1, '2021-03-09 18:34:51', '2021-03-09 18:34:51');
 
 -- --------------------------------------------------------
 
@@ -221,10 +287,16 @@ ALTER TABLE `designation`
   ADD PRIMARY KEY (`desn_id`);
 
 --
--- Indexes for table `gallary`
+-- Indexes for table `gallery`
 --
-ALTER TABLE `gallary`
+ALTER TABLE `gallery`
   ADD PRIMARY KEY (`glr_id`);
+
+--
+-- Indexes for table `message`
+--
+ALTER TABLE `message`
+  ADD PRIMARY KEY (`msg_id`);
 
 --
 -- Indexes for table `notice`
@@ -237,6 +309,15 @@ ALTER TABLE `notice`
 --
 ALTER TABLE `slider`
   ADD PRIMARY KEY (`sdr_id`);
+
+--
+-- Indexes for table `teacher_contact`
+--
+ALTER TABLE `teacher_contact`
+  ADD PRIMARY KEY (`tchr_id`),
+  ADD KEY `desn_fk` (`desn_fk`),
+  ADD KEY `dept_fk` (`dept_fk`),
+  ADD KEY `usr_id` (`usr_fk`);
 
 --
 -- Indexes for table `user`
@@ -266,13 +347,19 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `designation`
 --
 ALTER TABLE `designation`
-  MODIFY `desn_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `desn_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `gallary`
+-- AUTO_INCREMENT for table `gallery`
 --
-ALTER TABLE `gallary`
-  MODIFY `glr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `gallery`
+  MODIFY `glr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `message`
+--
+ALTER TABLE `message`
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `notice`
@@ -287,6 +374,12 @@ ALTER TABLE `slider`
   MODIFY `sdr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `teacher_contact`
+--
+ALTER TABLE `teacher_contact`
+  MODIFY `tchr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
@@ -295,6 +388,14 @@ ALTER TABLE `user`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `teacher_contact`
+--
+ALTER TABLE `teacher_contact`
+  ADD CONSTRAINT `teacher_contact_ibfk_1` FOREIGN KEY (`desn_fk`) REFERENCES `designation` (`desn_id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `teacher_contact_ibfk_2` FOREIGN KEY (`dept_fk`) REFERENCES `department` (`dept_id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `teacher_contact_ibfk_3` FOREIGN KEY (`usr_fk`) REFERENCES `user` (`usr_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Constraints for table `user`
