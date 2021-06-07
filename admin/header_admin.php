@@ -67,6 +67,7 @@ include_once('connect_db.php');
                                     <a class="nav-link" href="slider.php">Slider Images</a>
                                     <a class="nav-link" href="achievement.php">Achievement Images</a>
                                     <a class="nav-link" href="gallery.php">Gallery Images</a>
+                                    <a class="nav-link" href="videos.php">College Videos</a>
                                 </nav>
                             </div>
                             <a class="nav-link" href="teacher_contact.php"><div class="sb-nav-link-icon"><i class="fas fa-plus"></i></div>Teachers Contact </a>

@@ -138,100 +138,7 @@
       </div>
     </section>
 
-    <section id="clients" class="clients">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Our Departments</h2>
-        </div>
-
-        <div class="row no-gutters clients-wrap clearfix carousel" data-aos="fade-up" data-flickity='{"autoPlay": true, "groupCells": true }'>
-
-          <div class="col-lg-3 col-md-4 col-6 carousel-cell">
-
-            <div class="department">
-              <a href="civil.php">
-              <img src="assets/img/dept/civil.jpg" class="img-fluid" alt="">
-            </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6 carousel-cell">
-            <div class="department">
-              <a href="chemical.php">
-              <img src="assets/img/dept/chemical.jpg" class="img-fluid" alt="">
-            </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6 carousel-cell">
-            <div class="department">
-              <a href="cse.php">
-              <img src="assets/img/dept/cse.jpg" class="img-fluid" alt="">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4 col-6 carousel-cell">
-            <div class="department">
-              <a href="ece.php">
-              <img src="assets/img/dept/ece.jpg" class="img-fluid" alt="">
-            </a>
-            </div>
-          </div>
-           <div class="col-lg-3 col-md-4 col-6 carousel-cell">
-            <div class="department">
-              <a href="electrical.php">
-              <img src="assets/img/dept/electrical.jpg" class="img-fluid" alt="">
-            </a>
-            </div>
-          </div>
-           <div class="col-lg-3 col-md-4 col-6 carousel-cell">
-            <div class="department">
-              <a href="it.php">
-              <img src="assets/img/dept/it.jpg" class="img-fluid" alt="">
-            </a>
-            </div>
-          </div>
-           <div class="col-lg-3 col-md-4 col-6 carousel-cell">
-            <div class="department">
-              <a href="mach.php">
-              <img src="assets/img/dept/mach.jpg" class="img-fluid" alt="">
-            </a>
-            </div>
-          </div>
-           <div class="col-lg-3 col-md-4 col-6 carousel-cell">
-            <div class="department">
-              <a href="metal.php">
-              <img src="assets/img/dept/metal.jpg" class="img-fluid" alt="">
-            </a>
-            </div>
-          </div>
-           <div class="col-lg-3 col-md-4 col-6 carousel-cell">
-            <div class="department">
-              <a href="mining.php">
-              <img src="assets/img/dept/mining.jpg" class="img-fluid" alt="">
-            </a>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4 col-6 carousel-cell">
-            <div class="department">
-              <a href="production.php">
-              <img src="assets/img/dept/production.jpg" class="img-fluid" alt="">
-            </a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======= Services Section ======= -->
-    
-
-
-    <!-- ======= Our Clients Section ======= -->
+ <!-- ======= Our Clients Section ======= -->
     <section id="clients" class="clients">
       <div class="container" data-aos="fade-up">
 
@@ -253,6 +160,36 @@
         </div>
       </div>
     </section><!-- End Our Clients Section -->
+
+
+    <!-- ======= Our Video Clip Section ======= -->
+    <section id="clients" class="clients">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Video</h2>
+        </div>        
+        <div class="row no-gutters clients-wrap clearfix carousel" data-aos="fade-up" data-flickity='{"autoPlay": true, "groupCells": true }'>
+          <?php 
+            $query = mysqli_query($conn, "SELECT * FROM video");
+            while(@$row = mysqli_fetch_array($query)){
+              $link = $row['link'];
+          ?>
+
+            
+  <video autoplay muted loop playsinline preload="metadata" width="200" height="auto">
+    <source src="<?php echo $link; ?>" type="video/mp4">
+  </video>
+            <!--div class="col-lg-3 col-md-4 col-6 carousel-cell">
+              <div class="achievement">
+
+              </div>
+            </div-->
+
+          <?php } ?>
+        </div>
+      </div>
+    </section><!-- End Our Video Clip Section -->
 
 
   <?php include_once('footer.php'); ?>
