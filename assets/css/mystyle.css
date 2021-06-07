@@ -99,3 +99,9 @@
   border-radius: 10px;
 }
 /*********************/
+
+.videos video{
+	border-radius: 15px;
+	width: 100%;
+	height: auto;
+}

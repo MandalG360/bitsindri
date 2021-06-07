@@ -176,15 +176,13 @@
               $link = $row['link'];
           ?>
 
-            
-  <video autoplay muted loop playsinline preload="metadata" width="200" height="auto">
-    <source src="<?php echo $link; ?>" type="video/mp4">
-  </video>
-            <!--div class="col-lg-3 col-md-4 col-6 carousel-cell">
-              <div class="achievement">
-
+            <div class="col-lg-3 col-md-4 col-6 carousel-cell">
+              <div class="videos">
+                <video controls poster="" class="video" id="video">
+                  <source src="<?php echo($link) ?>" type="video/mp4">
+              </video>
               </div>
-            </div-->
+            </div>
 
           <?php } ?>
         </div>

@@ -43,8 +43,11 @@
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Newsletter</h4>
             <form action="" method="post">
-              <input type="email" name="email" id="newsletter"><input type="submit" value="Subscribe">
+              <input type="email" name="email" id="Newsletter" placeholder="Email Id..." style="outline: none;"><input type="submit" value="Subscribe">
             </form>
+            <div id="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14618.13611263282!2d86.4740646!3d23.6568531!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7c14e668e6f2feea!2sBIT%20Sindri!5e0!3m2!1sen!2sin!4v1623082821335!5m2!1sen!2sin" allowfullscreen="" loading="lazy" style="margin-top: 20px; width: 100%; height: auto; border-radius: 5px; border: 2px solid green;"></iframe>
+            </div>
           </div>
 
         </div>
