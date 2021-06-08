@@ -64,6 +64,11 @@
           Designed by <a href="#">IT Fighter</a>
         </div>
       </div>
+      
+      <div style ="margin-left: 10px;border-width: 2px;border-radius: 1px; border:2px solid white; margin-right: 120px">
+      <div id="sfc1fw8jwhr8fujel3sd57g1we9pfukmgza"></div><script type="text/javascript" src="https://counter6.stat.ovh/private/counter.js?c=1fw8jwhr8fujel3sd57g1we9pfukmgza&down=async" async></script><noscript><a href="https://www.freecounterstat.com" title="hit counter"><img src="https://counter6.stat.ovh/private/freecounterstat.php?c=1fw8jwhr8fujel3sd57g1we9pfukmgza" border="0" title="hit counter" alt="hit counter"></a></noscript>
+    </div>
+
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
         <a href="https://twitter.com/BITSindriDhn" target="_blank" class="twitter"><i class="bu bi-twitter"></i></a>
         <a href="https://www.facebook.com/groups/624429501553077" target="_blank" class="facebook"><i class="bu bi-facebook"></i></a>
