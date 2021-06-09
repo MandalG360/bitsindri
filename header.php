@@ -69,6 +69,8 @@ include_once('admin/connect_db.php');
 
           <li><a href="gallery.php">Gallery</a></li>
 
+          <li><a href="placement.php">Placement</a></li>
+
           <li><a href="#">About Us</a></li>
 
           <li><a href="contact.php">Contact</a></li>

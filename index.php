@@ -178,11 +178,14 @@
 
             <div class="col-lg-3 col-md-4 col-6 carousel-cell">
               <div class="videos">
-                <video controls poster="" class="video" id="video">
-                  <source src="<?php echo($link) ?>" type="video/mp4">
-              </video>
+                <iframe width="300" height="215"
+					src="<?php echo $link; ?>">
+				</iframe>
               </div>
+              <?php echo $link; ?>
             </div>
+
+            
 
           <?php } ?>
         </div>

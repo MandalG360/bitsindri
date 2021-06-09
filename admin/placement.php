@@ -77,6 +77,12 @@
                                     <input name="startDateTime" class="form-control py-4" id="inputStartDateTime" type="datetime-local" required />
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="small mb-1" for="inputStartDateTime">Batch</label>
+                                    <input name="batch" class="form-control py-4" id="inputStartDateTime" type="text" required />
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group mt-4 mb-0">
                             <input class="btn btn-success float-right" type="submit" name="save" value="Add & Published" class="btn btn-success">
@@ -147,6 +153,7 @@
         $startDateTime = strtolower(mysqli_real_escape_string($conn, $_POST['startDateTime']));
         $branch = mysqli_real_escape_string($conn, $_POST['dept']);
         $CTC = mysqli_real_escape_string($conn, $_POST['CTC']);
+        $batch = mysqli_real_escape_string($conn, $_POST['batch']);
         $type = $_FILES['file']['type'];
 
         function compress_image($source_url, $destination_url, $quality, $date)
@@ -173,7 +180,7 @@
                   exit();
                 }
 
-                $run = mysqli_query($conn, "INSERT INTO placement(name,image,selection_date,c_name,branch,ctc) values('$name','".compress_image($_FILES["file"]["tmp_name"], '../assets/placement/'.date('dmYHis').'.jpg', 40, date('dmYHis'))."','$startDateTime','$cname','$branch','$CTC')");
+                $run = mysqli_query($conn, "INSERT INTO placement(name,image,selection_date,c_name,branch,ctc,batch) values('$name','".compress_image($_FILES["file"]["tmp_name"], '../assets/placement/'.date('dmYHis').'.jpg', 40, date('dmYHis'))."','$startDateTime','$cname','$branch','$CTC','$batch')");
 
                 if($run){
                     echo "<script>window.open('placement.php?done=Saved successfully.','_self');</script>";
