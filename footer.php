@@ -94,6 +94,7 @@
   <script src="assets/js/flickity.pkgd.min.js"></script>
   <script src="assets/js/admin.js"></script>
   <script src="assets/js/myscript.js"></script>
+  <script src="assets/js/dissable-shortcut-key.min.js"></script>
 </body>
 
 </html>

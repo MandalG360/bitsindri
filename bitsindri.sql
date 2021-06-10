@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2021 at 12:26 PM
+-- Generation Time: Jun 10, 2021 at 08:56 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -179,12 +179,34 @@ CREATE TABLE `notice` (
 --
 
 INSERT INTO `notice` (`notice_id`, `msg`, `link`, `file`, `start_date_time`, `end_date_time`, `usr_id`, `created`, `updated`) VALUES
-(10, 'Notice for Diploma to Degree (Lateral Entry) Admission in B.Tech 3rd sem session 2020-21 through JCECEB, Ranchi 2nd counselling posted on 5-1-2021Notice for Diploma to Degree (Lateral Entry) Admission in B.Tech 3rd sem session 2020-21 through JCECEB, Ranchi 2nd counselling.', 'https://bitsindri.ac.in/docs/Notice%20for%20Diploma%20to%20Degree%20(Lateral%20Enry)%20Admission%20in%20B.Tech%203rd%20sem%20session%202020-21%20through%20JCECEB,%20Ranchi%202nd%20counselling.pdf', NULL, '2021-01-31 18:30:00', '2021-02-10 14:27:00', 1, '2021-02-26 14:27:52', '2021-02-26 14:27:52'),
-(11, 'Notice for B.Tech 2nd sem form filling (JUT, Ranchi) session 2019-20- (posted on 8-1-2021)Notice for B.Tech 2nd sem form filling (JUT, Ranchi) session 2019-20.', 'https://bitsindri.ac.in/docs/Notice%20for%20B.Tech%202nd%20sem%20form%20filling%20(JUT,%20Ranchi)%20session%202019-20.pdf', NULL, '2021-02-01 18:30:00', '2021-03-07 14:29:00', 1, '2021-02-26 14:32:23', '2021-02-26 14:30:09'),
-(12, 'Notice for Tentative date of B.Tech 3rd Semester Examination 2020', 'https://bitsindri.ac.in/docs/Notice%20for%20tentative%C2%A0date%20of%20B.Tech%203rd%20Semester%20Examination%202020.pdf', NULL, '2021-02-25 18:30:00', '2021-03-14 14:31:00', 1, '2021-02-26 14:31:29', '2021-02-26 14:31:29'),
-(13, 'Consent for students of B TECH  3 rd and 4th year and M TECH 1st and 2nd year for residing in Hostel  (Posted on 25-2-2021)Consent for students of B TECH 3 rd and 4th year and M TECH 1st and 2nd year for residing in Hostel.', 'https://bitsindri.ac.in/docs/Consent%20for%20Hostels.pdf', NULL, '2021-02-24 18:30:00', '2021-03-14 14:33:00', 1, '2021-02-26 14:33:47', '2021-02-26 14:33:47'),
-(14, 'Notice for GATE Scholarship of M.Tech 1st sem 2020-21 students  (Posted on 26-2-2021)Notice for GATE Scholarship of M.Tech 1st sem 2020-21 students.', 'https://bitsindri.ac.in/docs/gatescholarshipnotice-26-2-2021.PDF', NULL, '2021-02-28 18:30:00', '2021-03-14 14:35:00', 1, '2021-02-26 14:35:31', '2021-02-26 14:35:31'),
-(16, 'college viode', 'https://www.youtube.com/watch?v=BS6mAxCwP0E', NULL, '2021-06-06 18:30:00', '2021-07-01 09:42:00', 1, '2021-06-07 09:42:21', '2021-06-07 09:42:21');
+(17, 'One Week e-Faculty Development Program In Association With TEQIP-III On “Advances In Manufacturing” (AIM-2021) From June 15-19,2021- Posted on 5-6-2021One Week e-Faculty Development Program In Association With TEQIP-III On “Advances In Manufacturing” (AIM-2021) From June 15-19,2021.', 'https://bitsindri.ac.in/docs/One%20Week-e-FDP.pdf', NULL, '2021-06-09 18:30:00', '2021-07-31 04:47:00', 1, '2021-06-10 04:48:24', '2021-06-10 04:48:24'),
+(18, 'Notice for filling B.Tech 1st sem Exam form session 2020-21 (JUT, Ranchi)-Posted on 28-5-2021Notice for filling B.Tech 1st sem Exam form session 2020-21 (JUT, Ranchi)', 'https://bitsindri.ac.in/docs/Notice%20for%20filling%20B.Tech%201st%20sem%20Exam%20form%20session%202020-21%20(JUT,%20Ranchi).pdf', NULL, '2021-06-09 18:30:00', '2021-07-31 05:44:00', 1, '2021-06-10 04:49:53', '2021-06-10 05:44:27'),
+(19, 'JUT- Instructions For Students (Students-SOP) - Posted 28-4-2021JUT- Instructions For Students (Students-SOP)', 'https://bitsindri.ac.in/docs/Students-SOP.pdf', NULL, '2021-06-08 18:30:00', '2021-07-29 04:50:00', 1, '2021-06-10 04:50:48', '2021-06-10 04:50:48'),
+(20, 'Registration Number allotted to Lateral Entry for session 2020-21 (Posted on 28-4-2021)Registration Number allotted to Lateral Entry for session 2020-21', 'https://bitsindri.ac.in/docs/Letter%20No.%20531%20%20%20Date%2024.04.2021%20encl%20B.I.T.%20Sindri%20Reg.%202020.pdf', NULL, '2021-06-09 18:30:00', '2021-07-31 05:00:00', 1, '2021-06-10 05:00:39', '2021-06-10 05:00:39');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `placement`
+--
+
+CREATE TABLE `placement` (
+  `placement_id` int(11) NOT NULL,
+  `c_name` varchar(50) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `image` varchar(50) NOT NULL,
+  `branch` varchar(40) NOT NULL,
+  `ctc` float NOT NULL,
+  `batch` varchar(15) NOT NULL,
+  `selection_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `placement`
+--
+
+INSERT INTO `placement` (`placement_id`, `c_name`, `name`, `image`, `branch`, `ctc`, `batch`, `selection_date`) VALUES
+(2, 'TCS', 'Sanjeev', '09062021221644.jpg', '6', 3.6, '2K18', '2021-06-10');
 
 -- --------------------------------------------------------
 
@@ -205,7 +227,9 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`sdr_id`, `file`, `heading`, `description`, `usr_id`) VALUES
-(2, '01032021181736.jpg', '', '', 1);
+(6, '09062021215141.jpg', 'Admin Block', 'BIT Sindri was established in 1949', 1),
+(7, '10062021103237.jpg', 'BIT Sindri', 'IMPROVEMENT OF STUDENT LEARNING & GRADUATES EMPLOYABILITY- 20th July 2019', 1),
+(8, '10062021103424.jpg', '', 'Aerial View Of BIT Sindri', 1);
 
 -- --------------------------------------------------------
 
@@ -283,7 +307,9 @@ CREATE TABLE `video` (
 --
 
 INSERT INTO `video` (`video_id`, `title`, `link`, `updated`, `created`) VALUES
-(4, 'bit', 'https://youtu.be/7wQ9V7mBY0o', '2021-06-07 10:45:03', '2021-06-07 10:45:03');
+(4, 'bit', 'https://youtu.be/7wQ9V7mBY0o', '2021-06-07 10:45:03', '2021-06-07 10:45:03'),
+(5, 'my pc video', '1.mp4', '2021-06-08 11:41:18', '2021-06-08 11:41:18'),
+(6, 'youtube video', 'https://www.youtube.com/watch?v=P0P_Sfju0-Q', '2021-06-08 11:44:13', '2021-06-08 11:44:13');
 
 --
 -- Indexes for dumped tables
@@ -324,6 +350,12 @@ ALTER TABLE `message`
 --
 ALTER TABLE `notice`
   ADD PRIMARY KEY (`notice_id`);
+
+--
+-- Indexes for table `placement`
+--
+ALTER TABLE `placement`
+  ADD PRIMARY KEY (`placement_id`);
 
 --
 -- Indexes for table `slider`
@@ -392,13 +424,19 @@ ALTER TABLE `message`
 -- AUTO_INCREMENT for table `notice`
 --
 ALTER TABLE `notice`
-  MODIFY `notice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `notice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `placement`
+--
+ALTER TABLE `placement`
+  MODIFY `placement_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `sdr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `sdr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `teacher_contact`
@@ -416,7 +454,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
-  MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

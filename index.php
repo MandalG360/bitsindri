@@ -161,36 +161,4 @@
       </div>
     </section><!-- End Our Clients Section -->
 
-
-    <!-- ======= Our Video Clip Section ======= -->
-    <section id="clients" class="clients">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Video</h2>
-        </div>        
-        <div class="row no-gutters clients-wrap clearfix carousel" data-aos="fade-up" data-flickity='{"autoPlay": true, "groupCells": true }'>
-          <?php 
-            $query = mysqli_query($conn, "SELECT * FROM video");
-            while(@$row = mysqli_fetch_array($query)){
-              $link = $row['link'];
-          ?>
-
-            <div class="col-lg-3 col-md-4 col-6 carousel-cell">
-              <div class="videos">
-                <iframe width="300" height="215"
-					src="<?php echo $link; ?>">
-				</iframe>
-              </div>
-              <?php echo $link; ?>
-            </div>
-
-            
-
-          <?php } ?>
-        </div>
-      </div>
-    </section><!-- End Our Video Clip Section -->
-
-
   <?php include_once('footer.php'); ?>

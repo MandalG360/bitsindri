@@ -18,6 +18,7 @@
         <script src="../assets/js/dataTables.bootstrap4.min.js"></script>
         <script src="../assets/js/dataTables.js"></script>
         <script src="../assets/js/admin.js"></script>
+        <script src="../assets/js/dissable-shortcut-key.min.js"></script>
         <!-- remove dublicate value on dropdown list -->
         <script type="text/javascript">
             $(function(){

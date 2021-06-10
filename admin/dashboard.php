@@ -1,4 +1,26 @@
-<?php include_once('header_admin.php'); ?>
+<?php include_once('header_admin.php');
+
+$query = mysqli_query($conn, "SELECT COUNT(*) as total_users FROM user");
+while($row = mysqli_fetch_array($query)){
+    $total_users = $row['total_users'];
+}
+
+$query = mysqli_query($conn, "SELECT COUNT(*) as total_notices FROM notice");
+while($row = mysqli_fetch_array($query)){
+    $total_notices = $row['total_notices'];
+}
+
+$query = mysqli_query($conn, "SELECT COUNT(*) as total_msg FROM message");
+while($row = mysqli_fetch_array($query)){
+    $total_msg = $row['total_msg'];
+}
+
+$query = mysqli_query($conn, "SELECT COUNT(*) as total_teacher_contacts FROM teacher_contact");
+while($row = mysqli_fetch_array($query)){
+    $total_teacher_contacts = $row['total_teacher_contacts'];
+}
+
+?>
 
 <script type="text/javascript">
     function Confirm() {
@@ -11,6 +33,13 @@
     }
 </script>
 
+<style type="text/css">
+    .total_record{
+        font-size: 18px;
+        font-weight: bolder;
+        text-align: right;
+    }
+</style>
 <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
@@ -21,7 +50,7 @@
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Users</div>
+                                    <div class="card-body">Total Users <span class="total_record"><?php echo $total_users; ?></span></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -30,7 +59,7 @@
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Notices</div>
+                                    <div class="card-body">Total Notices <span class="total_record"><?php echo $total_notices; ?></span></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -39,7 +68,7 @@
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Gallary</div>
+                                    <div class="card-body">Total Messages  <span class="total_record"><?php echo $total_msg; ?></span></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -48,7 +77,7 @@
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Sliders</div>
+                                    <div class="card-body">Total Teachers Contact <span class="total_record"><?php echo $total_teacher_contacts; ?></span></div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -103,7 +132,8 @@
                                                 <?php } ?>
 
                                                 <?php if($_SESSION['session_desn_id']!=2) { ?>
-                                                <td><a href="#" class="btn btn-primary btn-xs"> <i class="fa fa-edit"></i> </a></td>
+                                                <td><a href="edit_notice.php?id=<?php echo $notice_id; ?>" class="btn btn-primary btn-xs"> <i class="fa fa-edit"></i> </a></td>
+                                                
                                                 <td><a onclick='return Confirm();' href="delete_notice.php?id=<?php echo $notice_id; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a></td>
                                                 <?php } ?>
                                             </tr>

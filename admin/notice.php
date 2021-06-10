@@ -113,7 +113,8 @@
                                     <td><a class="btn btn-success btn-xs"> Running... </a></td>
                                 <?php } ?>
 
-                                <td><a href="#" class="btn btn-primary btn-xs"> <i class="fa fa-edit"></i> </a></td>
+                                <td><a href="edit_notice.php?id=<?php echo $notice_id; ?>" class="btn btn-primary btn-xs"> <i class="fa fa-edit"></i> </a></td>
+                                
                                 <td><a onclick='return Confirm();' href="delete_notice.php?id=<?php echo $notice_id; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a></td>
                             </tr>
                             <?php } ?>

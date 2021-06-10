@@ -121,7 +121,9 @@
                                 <td><?php echo $row['dept']; ?></td>
                                 <td><?php echo $row['mob']; ?></td>
                                 <td><?php echo $row['email']; ?></td>
+                                
                                 <td><a href="edit_teacher_contact.php?id=<?php echo $row['tchr_id']; ?>" class="btn btn-primary btn-xs"> <i class="fa fa-edit"></i> </a></td>
+
                                 <td><a onclick='return Confirm();' href="delete_teacher_contact.php?id=<?php echo $row['tchr_id']; ?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a></td>
                             </tr>
                             <?php } ?>
